@@ -1,0 +1,13 @@
+applications:
+- name: orderservice
+  buildpack: java_buildpack_offline
+  memory: 1G
+  disk_quota: 256M
+  path: ./target/orderservice-1.0.3-SNAPSHOT.jar
+
+  services:
+  - service-registry
+  #- circuit-breaker
+
+  env:
+    TRUST_CERTS: api.sys.cg.examples.cf
